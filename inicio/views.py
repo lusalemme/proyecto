@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from inicio.models import Alumno
 from inicio.forms import FormularioCargarAlumno, FormularioBuscarAlumno
-from django.views.generic.edit import DeleteView
+from django.views.generic.edit import DeleteView, UpdateView
 from django.urls import reverse_lazy
 
 def inicio(request):
@@ -45,3 +45,9 @@ class AlumnoBorrar(DeleteView):
     model = Alumno
     template_name = "alumno_borrar.html"
     success_url = reverse_lazy('listado_de_alumnos')
+
+class AlumnoActualizar(UpdateView):
+    model = Alumno
+    template_name = "alumno_actualizar.html"
+    success_url = reverse_lazy('listado_de_alumnos')
+    fields = '__all__'

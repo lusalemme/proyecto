@@ -15,6 +15,7 @@
                 <li>
                     {{alumno}}
                     | <a href={% url "alumno_detalle" alumno.id %}>Detalle</a>
+                    | <a href={% url "alumno_actualizar" alumno.id %}>Actualizar</a>
                     | <a href={% url "alumno_borrar" alumno.id %}>Borrar</a>
                 </li>
             {% endfor %}

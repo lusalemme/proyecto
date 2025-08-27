@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block texto_h1 %} Actualizar alumno {% endblock texto_h1 %}
+
+{% block contenido %} 
+<form action="" method="POST">
+        {% csrf_token %}
+
+        {{form}}
+        
+        <input type="submit" value="Actualizar">
+    </form>
+{% endblock contenido %}
