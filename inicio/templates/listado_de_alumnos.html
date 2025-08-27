@@ -12,7 +12,10 @@
     {% if alumnos_buscados %}
         <ul>
             {% for alumno in alumnos_buscados %}
-                <li>{{alumno}}</li>
+                <li>
+                    {{alumno}}
+                    | <a href={% url "alumno_detalle" alumno.id %}>Detalle</a>
+                </li>
             {% endfor %}
         </ul>
     {% else %}

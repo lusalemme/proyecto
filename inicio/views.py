@@ -34,3 +34,7 @@ def listado_de_alumnos(request):
 
 
     return render(request, 'listado_de_alumnos.html', {'alumnos_buscados': alumnos_buscados, 'formulario': formulario})
+
+def alumno_detalle(request, id_alumno):
+    alumno = Alumno.objects.get(id=id_alumno)
+    return render(request, 'alumno_detalle.html', {'alumno': alumno})

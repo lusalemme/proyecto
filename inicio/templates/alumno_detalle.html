@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block texto_h1 %} Alumno: {{alumno}} {% endblock texto_h1 %}
+
+{% block contenido %} 
+<ul>
+    <li>Nombre: {{alumno.nombre}} </li>
+    <li>Nota: {{alumno.nota}} </li>
+</ul>
+{% endblock contenido %}
