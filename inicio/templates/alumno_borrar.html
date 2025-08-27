@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block texto_h1 %} Borrar alumno {% endblock texto_h1 %}
+
+{% block contenido %} 
+<form action="" method="POST">
+        {% csrf_token %}
+
+        <p>
+            ¿Desea eliminar el alumno {{alumno}}?
+        </p>
+        
+        <input type="submit" value="Confirmar">
+    </form>
+{% endblock contenido %}
