@@ -10,6 +10,11 @@
         <a href={% url "inicio" %}>Inicio</a>
         <a href={% url "cargar_alumno" %}>Cargar alumno</a>
         <a href={% url "listado_de_alumnos" %}>Listado de alumnos</a>
+        <a href={% url "login" %}>Iniciar Sesion</a>
+        <form action={% url "logout" %} method="POST">
+            {% csrf_token %}
+            <input type="submit" value="Cerrar Sesion">
+        </form>
     </nav>
 
     <h1>{% block texto_h1 %} {% endblock texto_h1 %}</h1>
