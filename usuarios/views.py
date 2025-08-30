@@ -25,3 +25,6 @@ def registro(request):
     else:
         formulario = Registro()
     return render(request, 'registro.html', {'formulario': formulario})
+
+def perfil(request):
+    return render(request, 'perfil.html')

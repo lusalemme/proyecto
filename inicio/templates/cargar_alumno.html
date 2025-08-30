@@ -2,7 +2,7 @@
 {% block texto_h1 %} Cargar alumnos {% endblock texto_h1 %}
 
 {% block contenido %} 
-<form action="" method="POST">
+<form action="" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
 
         {{formulario}}

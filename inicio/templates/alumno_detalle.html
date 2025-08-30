@@ -4,6 +4,12 @@
 {% block contenido %} 
 <ul>
     <li>Nombre: {{alumno.nombre}} </li>
+    <li>Materia: {{alumno.materia}} </li>
     <li>Nota: {{alumno.nota}} </li>
+    {% if alumno.imagen %}
+        <img src="{{ alumno.imagen.url }}" alt="Imagen del examen" height="400px">
+    {% else %}
+        <p>No hay imagen de examen cargada</p>
+    {% endif %}
 </ul>
 {% endblock contenido %}

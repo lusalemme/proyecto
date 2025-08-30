@@ -2,7 +2,7 @@
 {% block texto_h1 %} Actualizar alumno {% endblock texto_h1 %}
 
 {% block contenido %} 
-<form action="" method="POST">
+<form action="" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
 
         {{form}}
