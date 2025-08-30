@@ -4,10 +4,13 @@ from inicio.models import Alumno
 from inicio.forms import FormularioCargarAlumno, FormularioBuscarAlumno
 from django.views.generic.edit import DeleteView, UpdateView
 from django.urls import reverse_lazy
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 def inicio(request):
     return render(request, 'inicio.html')
 
+@login_required
 def cargar_alumno(request):
     print(request.POST)
 
@@ -41,12 +44,12 @@ def alumno_detalle(request, id_alumno):
     alumno = Alumno.objects.get(id=id_alumno)
     return render(request, 'alumno_detalle.html', {'alumno': alumno})
 
-class AlumnoBorrar(DeleteView):
+class AlumnoBorrar(LoginRequiredMixin, DeleteView):
     model = Alumno
     template_name = "alumno_borrar.html"
     success_url = reverse_lazy('listado_de_alumnos')
 
-class AlumnoActualizar(UpdateView):
+class AlumnoActualizar(LoginRequiredMixin, UpdateView):
     model = Alumno
     template_name = "alumno_actualizar.html"
     success_url = reverse_lazy('listado_de_alumnos')
